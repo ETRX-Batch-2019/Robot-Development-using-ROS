@@ -5,6 +5,7 @@ This project aims at exploring the ROS framework and implementing a robot/quadco
 * ### Week 1: July 17, 2017 to July 23, 2017
      - Watched tutorials, searched existing projects to decide project approach
      - Installed ROS Kinetic Kame on Ubuntu 16.04.2 (Xenial Xerus)
-     - Followed the beginner tutorials on wiki.ros.org
+     - Followed all the beginner tutorials on [wiki.ros.org](http://wiki.ros.org/ROS/Tutorials)
 * ### Week 2: July 24, 2017 to July 30, 2017
-     - 
+     - Started reading "Programming Robots with ROS"
+     - Read upto chapter 3
