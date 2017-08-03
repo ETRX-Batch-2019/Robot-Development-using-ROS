@@ -1,0 +1,53 @@
+\documentclass{article}
+\pagenumbering{arabic} 
+\usepackage{graphicx}
+\usepackage[a4paper, portrait, total={6.5in, 9in}]{geometry}
+\graphicspath{{./images/}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage{hyperref}
+\hypersetup
+{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+\urlstyle{same}
+
+\usepackage{enumitem}
+\setlist{nosep}
+
+\begin{document}
+	\begin{center}
+		\huge\textbf{Robot development using ROS}
+	\end{center}
+	
+	\hrulefill
+	
+	\section*{Project Description:}
+		The Robot Operating System (ROS) is a flexible framework for developing software  with tools, libraries and conventions that facilitate the creation of complex robot behaviour on a wide variety of robotic platforms.	
+		\newline
+		
+		\noindent This project deals with the exploring the ROS framework for development of a robotic system with various sensors and actuators in order to understand the underlying concepts and to create a robot/quadcoptor capable of forming a 3D map of a given environment using a depth camera (Microsoft Kinect).
+		\newline
+			
+	\section*{Work Plan:}
+	\begin{itemize}
+		\item Explore the ROS platform
+		\item Interface a depth camera with ROS
+		\item Create a 3-dimensional map of an indoor environment in simulation using a depth camera (like Microsoft Kinect), mounted on a robot/quadcoptor
+		\item Implement the same for an actual real-world scenario
+		
+		\item Interface actuators and other sensors 
+		\item Design and build a mobile robot/quadcopter with the above functionality controlled with ROS 
+	\end{itemize}
+
+	\section*{Chalanges:}
+	\begin{itemize}
+		\item Learning ROS
+		\item Implementing the SLAM algorithm
+		\item Designing and building a robot/quadcopter
+	\end{itemize}
+	
+\end{document}

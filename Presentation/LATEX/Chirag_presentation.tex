@@ -1,0 +1,88 @@
+\documentclass[11pt, a4paper]{beamer}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Copenhagen}
+%\usetheme{Antibes}
+%\usetheme{Darmstadt} 
+\usetheme{Dresden} 
+
+\usecolortheme{sidebartab}
+\usepackage[]{movie15}
+\usepackage{hyperref}
+\hypersetup
+{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+\urlstyle{same}
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+\usepackage{movie15}
+
+\begin{document}
+	\setbeamertemplate{sidebar left}{}
+	\title{Robot development using ROS}
+	%\subtitle{ \\ Robot development using ROS}
+	
+		\author
+		{Chirag Shah\\ Srijal Poojari\\
+		 \textbf{Guide:} Kumar Khandale			
+		}
+
+	\institute{Sardar Patel Institute of Technology}
+	
+	\date{\today}
+	%\addtobeamertemplate{sidebar left}{}{\includegraphics[scale = 0.3]{logowithtext.png}}
+	\frame{\titlepage}
+
+\setbeamertemplate{sidebar left}[sidebar theme]
+\section{Overview of Project}
+\begin{frame}{Overview of Project}
+
+	
+	\noindent This project deals with the exploring the ROS framework for development of a robotic system with various sensors and actuators in order to understand the underlying concepts and to create a robot/quadcoptor capable of forming a 3D map of a given environment using a depth camera (Microsoft Kinect).
+	\newline
+	
+\end{frame}
+
+\section{What is ROS}
+\begin{frame}{What is ROS? }
+
+The Robot Operating System (ROS) is a flexible framework for developing software  with tools, libraries and conventions that facilitate the creation of complex robot behaviour on a wide variety of robotic platforms.	
+	
+\end{frame}
+
+\section{Weekly Plan}
+\begin{frame}{Weekly Plan }
+
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Week} & \textbf{Objective}\\
+			\hline
+			1 to 3 & Installing ROS, Understanding the underlying concepts. \\
+			\hline
+			4 to 5 & Interfacing the Microsoft Kinect sensor on Gazebo simulator.\\
+			\hline
+			6 to 8 & Understanding Pointclouds and RTAB Map for real time \\ & environment mapping. \\
+			\hline
+			9  &  Interface the Kinect sensor for mapping of \\ & real world environments.\\
+			\hline
+			
+			
+			
+			
+
+		\end{tabular}	
+\end{frame}
+
+\section{Thank You}
+	\begin{frame}{Thank You}
+	\centering \textbf{THANK YOU !}
+	\end{frame}
+
+
+\end{document}
