@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.21)  30 OCT 2017 23:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.21)  1 NOV 2017 00:03
 entering extended mode
 **./bare_jrnl.tex
 (bare_jrnl.tex
@@ -133,42 +133,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 472--476
 
  []
 
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 520.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 520.
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 662.
+(Font)              <8> on input line 696.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 662.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 662.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 710.
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
-
+(Font)              <6> on input line 696.
+ [2
 
 ] (bare_jrnl.aux) ) 
 Here is how much of TeX's memory you used:
  1064 strings out of 493333
  19327 string characters out of 3139191
- 78332 words of memory out of 3000000
+ 79332 words of memory out of 3000000
  4652 multiletter control sequences out of 15000+200000
  43058 words of font info for 77 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 29i,8n,28p,822b,210s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26i,8n,28p,822b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<E:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><E:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><E:/Program Files/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmr8a.pfb><E:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on bare_jrnl.pdf (1 page, 56304 bytes).
+Output written on bare_jrnl.pdf (2 pages, 61119 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
+ 26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
