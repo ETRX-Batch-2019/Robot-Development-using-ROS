@@ -1,4 +1,5 @@
 \documentclass[journal]{IEEEtran}
+%\documentclass[conference]{IEEEtran}
 \hyphenation{op-tical net-works semi-conduc-tor}
 \usepackage{graphicx}
 \graphicspath{{./images/}}
@@ -7,89 +8,25 @@
 \title{3D Indoor Mapping Using ROS and Microsoft Kinect Sensor}
 \author{Chirag~Shah
         and~Srijal~Poojari}% <-this % stops a space
-%\thanks{M. Shell was with the Department
-%of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
-%GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
-%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
-%\thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
-
-% note the % following the last \IEEEmembership and also \thanks - 
-% these prevent an unwanted space from occurring between the last author name
-% and the end of the author line. i.e., if you had this:
-% 
-% \author{....lastname \thanks{...} \thanks{...} }
-%                     ^------------^------------^----Do not want these spaces!
-%
-% a space would be appended to the last name and could cause every name on that
-% line to be shifted left slightly. This is one of those "LaTeX things". For
-% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
-% "AB" then you have to do: "\textbf{A}\textbf{B}"
-% \thanks is no different in this regard, so shield the last } of each \thanks
-% that ends a line with a % and do not let a space in before the next \thanks.
-% Spaces after \IEEEmembership other than the last one are OK (and needed) as
-% you are supposed to have spaces between the names. For what it is worth,
-% this is a minor point as most people would not even notice if the said evil
-% space somehow managed to creep in.
-
-
-% The paper headers
 \markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
-% The only time the second header will appear is for the odd numbered pages
-% after the title page when using the twoside option.
-% 
-% *** Note that you probably will NOT want to include the author's ***
-% *** name in the headers of peer review papers.                   ***
-% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
-% you desire.
 
-
-
-
-% If you want to put a publisher's ID mark on the page you can do it like
-% this:
-%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
-% Remember, if you use this you must call \IEEEpubidadjcol in the second
-% column for its text to clear the IEEEpubid mark.
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-
-
-
-% make the title area
 \maketitle
-
-% As a general rule, do not put math, special symbols or citations
-% in the abstract or keywords.
 \begin{abstract}
-This project deals with the exploring the ROS framework for development of a robotic system with various
-sensors and actuators in order to understand the underlying concepts and to create a robot/quadcoptor
-capable of forming a 3D map of a given environment using a depth camera (Microsoft Kinect).
+The objective of this project is to create a 3D map of a given environment using a depth camera (Microsoft Kinect) and send this information over a Wi-Fi network to a laptop. This will enable mounting of the camera on a robot/quadcopter and create 3D  map of an indoor environment.
+
+We used the ROS framework running on a laptop and a Raspberry Pi, a Microsoft Kinect, RTAB-Map package for ROS for constructing the 3D map and freenect package for interfacing Kinect with ROS.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-ROS, Robot Operating System, 3D-Mapping, Microsoft Kinect Sensor
+ROS, Robot Operating System, 3D-Mapping, Microsoft Kinect Sensor, Wireless Mapping, RTAB-Map, Raspberry Pi (RPi)
 \end{IEEEkeywords}
 
-
-% For peer review papers, you can put extra information on the cover
-% page as needed:
-% \ifCLASSOPTIONpeerreview
-% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
-% \fi
-%
-% For peerreview papers, this IEEEtran command inserts a page break and
-% creates the second title. It will be ignored for other modes.
-\IEEEpeerreviewmaketitle
-
-
 \section{Introduction}
-\IEEEPARstart{A}{utonomous} robots operating in real life settings must be able to navigate in large, unstructured, dynamic and unknown spaces. To do so, they must build a map of their operating environment in order to localize itself in it, a problem known as Simultaneous localization and mapping (SLAM). 
+\IEEEPARstart{A}{utonomous} robots operating in real life settings must be able to navigate in large, unstructured, dynamic and unknown spaces. To do so, they must build a map of their operating environment in order to localize itself in it. We intend to mount the kinect sensor on a quadcopter and create a 3D map of an indoor environment.
+
+We connected the Microsoft Kinect sensor to the RPi and interfaced it using the freenect package; Using the RGB-D image from the kinect sensor, RPi genrates a 3D map using RTAB-Map. RPi then transmits the 3D map to the laptop over a Wi-Fi network. RViz is used to visualize the 3D map on the laptop.
 \\
 
 \hfill mds
@@ -104,7 +41,7 @@ ROS, Robot Operating System, 3D-Mapping, Microsoft Kinect Sensor
 The Robot Operating System (ROS) is a framework for writing robot software. It is a set of utilities and libraries for implementing different kinds of functionality on robots. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms. It is not a programming language. 
 
 A ROS system is comprised of a number of independent nodes, each of which communicates with the other nodes using a publish/subscribe messaging model. For example, a particular sensor’s driver might be implemented as a node, which publishes sensor data in a stream of messages. These messages could be consumed by any number of other nodes.
-Note that nodes in ROS do not have to be on the same system or even systems of the same architecture. This makes ROS really flexible and adaptable to the needs of the user. ROS is open source, maintained by many people.
+Note that nodes in ROS do not have to be on the same system or even systems of the same architecture. This makes ROS really flexible and adaptable to the needs of the user. The ROS framework is open source.
 ROS starts with the ROS Master. The Master allows all other nodes to find and talk to each other. 
 
 \subsubsection{roscore}
@@ -139,25 +76,48 @@ Microsoft Kinect is a RGB-D camera.
 Kinect uses an RGB camera with depth sensor and infrared projector with a monochrome CMOS sensor. The Kinect functions by covering the room with a constant, predetermined pattern of infrared dots. The monochrome CMOS sensor is placed at an offset relative to the IR transmitter, and the difference between the observed and expected IR dot positions is used to calculate the depth at each pixel. This gives a depth image of the surroundings. This depth image is super imposed with the RGB image to obtain a RGB-D image.
 
 \subsection{RTAB-Map}
-RTAB-Map (Real-Time Appearance-Based Mapping) is a RGB-D Graph-Based SLAM approach based on an incremental appearance-based loop closure detector. The loop closure detector uses a bag-of-words approach to determinate how likely a new image comes from a previous location or a new location. When a loop closure hypothesis is accepted, a new constraint is added to the map’s graph, then a graph optimizer minimizes the errors in the map. A memory management approach is used to limit the number of locations used for loop closure detection and graph optimization, so that real-time constraints on large-scale environnements are always respected. RTAB-Map can be used alone with a hand-held Kinect or stereo camera for 6DoF RGB-D mapping, or on a robot equipped with a laser rangefinder for 3DoF mapping.
+RTAB-Map (Real-Time Appearance-Based Mapping) is a RGB-D Graph-Based SLAM approach based on an incremental appearance-based loop closure detector. The loop closure detector uses a bag-of-words approach to determinate how likely a new image comes from a previous location or a new location. When a loop closure hypothesis is accepted, a new constraint is added to the map’s graph, then a graph optimizer minimizes the errors in the map. A memory management approach is used to limit the number of locations used for loop closure detection and graph optimization, so that real-time constraints on large-scale environments are always respected. RTAB-Map can be used alone with a hand-held Kinect or stereo camera for 6DoF RGB-D mapping, or on a robot equipped with a laser rangefinder for 3DoF mapping.
 
 \subsection{Raspberry Pi}
 A roscore runs on the Raspberry Pi. This roscore is common to the laptop which is on the same network. Thus all the map/sensor data is available to the laptop over the WiFi network.
-The kinect sensor is connected to the Raspberry Pi. Mapping is performed on the Raspberry Pi while the map is visualized on the latptop.
+
+The Kinect sensor is connected to the Raspberry Pi. Mapping is performed on the Raspberry Pi while the map is visualized on the laptop. 
+The RPi and kinect are powered by a 4s li-po (lithum polymer) battery. 
+
+\section{System Design}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=2.5in]{setupC.png}
+	\caption{Mapping with laptop}
+	\label{fig_sim}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=2.5in]{Wiring_Diagram.png}
+	\caption{Mapping with laptop}
+	\label{fig_sim}
+\end{figure}
+
 
 \section{Results}
+A frame rate of 20-25 fps is obtained when the Kinect is connected to the laptop, RTAB-Map does the mapping and RTAB-Mapviz/RViz visualizes the map. 
+
+4-5 fps is obtained when the kinect is connected to the Raspberry Pi and mapping is done by it and the map is visualized on the laptop. The data stream from the Kinect has to be divided by two to allow the RPi to process it fast enough. RPi requires 80-100kbps bandwidth for transmitting the map over the network to the laptop.
+
+
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=2.5in]{1(1).png}
-\caption{Mapping results with laptop}
+\caption{Mapping with laptop}
 \label{fig_sim}
 \end{figure}
  
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=2.5in]{1(2).png}
-	\caption{Mapping results with laptop}
+	\caption{Mapping with laptop}
 	\label{fig_sim}
 \end{figure}
 
@@ -176,42 +136,16 @@ The kinect sensor is connected to the Raspberry Pi. Mapping is performed on the 
 \end{figure}
 
 \section{Conclusion}
-The conclusion goes here.
+We were able to create a mobile system to generate a 3D map using the ROS framework on RPi and a Kinect sensor.
+RPi provides a sufficient throughput for computing a 3D Map at 4-5 fps and transmit the same over a Wi-Fi.
 
+This project enabled us to understand how the ROS framework works and how different packages integrate with each other.
 
-
-
-
-% if have a single appendix:
-%\appendix[Proof of the Zonklar Equations]
-% or
-%\appendix  % for no appendix heading
-% do not use \section anymore after \appendix, only \section*
-% is possibly needed
-
-% use appendices with more than one appendix
-% then use \section to start each appendix
-% you must declare a \section before using any
-% \subsection or using \label (\appendices by itself
-% starts a section numbered zero.)
-%
-
-
-\appendices
-\section{Proof of the First Zonklar Equation}
-Appendix one text goes here.
-
-% you can choose not to have a title for an appendix
-% if you want by leaving the argument blank
-\section{}
-Appendix two text goes here.
-
-
-% use section* for acknowledgment
 \section*{Acknowledgment}
 
+We would like to thank out mentor Kumar Khandagle for his support and guidance.
 
-The authors would like to thank...
+We would also like to thank our college Sardar Patel Institute of Technology for providing us with a platform for us to showcase our project.
 
 
 % Can use something like this to put references on a page
@@ -246,22 +180,27 @@ The authors would like to thank...
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\bibitem{RTAB-Map Paper 1}
+M.~Labbé and F.~Michaud, \emph{"Appearance-Based Loop Closure Detection for Online Large-Scale and Long-Term Operation,"},
+IEEE Transactions on Robotics, vol. 29, no. 3, pp. 734-745, 2013.
+
+\bibitem{RTAB-Map Paper 2}
+M.~Labbé and F.~Michaud, \emph{"Memory management for real-time appearance-based loop closure detection,"},
+Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems, 2011, pp.1271–1276.
+
+Memory management for real-time appearance-based loop closure detection,” in Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems.
+
+\bibitem{RTAB-Map Paper 3}
+M.~Labbé and F.~Michaud, \emph{"Online Global Loop Closure Detection for Large-Scale Multi-Session Graph-Based SLAM,"},
+Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems, 2014.
+
+\bibitem{RTAB-Map Paper 3}
+Emarketer.com, 'Social Networking Reaches Nearly One in Four Around the World', 2014. [Online]. Available: 
+http://introlab.github.io/rtabmap/. 
+[Accessed: 31- Oct- 2017].
 
 \end{thebibliography}
 
-% biography section
-% 
-% If you have an EPS/PDF photo (graphicx package needed) extra braces are
-% needed around the contents of the optional argument to biography to prevent
-% the LaTeX parser from getting confused when it sees the complicated
-% \includegraphics command within an optional argument. (You could create
-% your own custom macro containing the \includegraphics command to make things
-% simpler here.)
-%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
-% or if you just want to reserve a space for a photo:
 \end{document}
 
 
