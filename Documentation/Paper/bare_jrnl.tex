@@ -80,25 +80,20 @@ Kinect uses an RGB camera with depth sensor and infrared projector with a monoch
 RTAB-Map (Real-Time Appearance-Based Mapping) is a RGB-D Graph-Based SLAM approach based on an incremental appearance-based loop closure detector. The loop closure detector uses a bag-of-words approach to determinate how likely a new image comes from a previous location or a new location. When a loop closure hypothesis is accepted, a new constraint is added to the map’s graph, then a graph optimizer minimizes the errors in the map. A memory management approach is used to limit the number of locations used for loop closure detection and graph optimization, so that real-time constraints on large-scale environments are always respected. RTAB-Map can be used alone with a hand-held Kinect or stereo camera for 6DoF RGB-D mapping, or on a robot equipped with a laser rangefinder for 3DoF mapping [6].
 
 \subsection{Raspberry Pi}
-A roscore runs on the Raspberry Pi. This roscore is common to the laptop which is on the same network. Thus all the map/sensor data is available to the laptop over the WiFi network.
-
-The Kinect sensor is connected to the Raspberry Pi. Mapping is performed on the Raspberry Pi while the map is visualized on the laptop. 
-The RPi and kinect are powered by a 4s li-po (lithum polymer) battery. 
+We are using Raspberry Pi 2 Model B along with a WiFi adapter. Higher versions of Raspberry Pi would provide better performance.
 
 \section{System Design}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=2.5in]{setupC.png}
-	\caption{Mapping with laptop}
+	\includegraphics[width=2.5in]{SystemDesign.jpg}
+	\caption{System Design}
 	\label{fig_sim}
 \end{figure}
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=2.5in]{Wiring_Diagram.png}
-	\caption{Mapping with laptop}
-	\label{fig_sim}
-\end{figure}
+The OS installed on RPi is Ubuntu Mate, V14.2. ROS Kinetic version 2.3 is installed on the RPi. The Kinect provides the RPi with a RGB-D image. Freenect\_launch package is used for interfacing Kinect with ROS on the RPi. RTAB-Map package is used on the RPi for constructing a 3D map from the image provided by the Kinect. Openni\_launch can also be used for interfacing the kinect.
+
+The roscore runs on the Raspberry Pi. This roscore is common to the laptop which is on the same network. Thus all the map/sensor data is available to the laptop over the WiFi network.
+Rviz is used for visualizing the map on the laptop. Similarly rtabmapviz can be used for visualizing the map.
 
 
 \section{Results}
@@ -111,21 +106,21 @@ A frame rate of 20-25 fps is obtained when the Kinect is connected to the laptop
 \begin{figure}[ht]
 \centering
 \includegraphics[width=2.5in]{1(1).png}
-\caption{Mapping with laptop}
+\caption{Mapping with kinect connected to a laptop}
 \label{fig_sim}
 \end{figure}
  
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=2.5in]{1(2).png}
-	\caption{Mapping with laptop}
+	\caption{Mapping with kinect connected to a laptop}
 	\label{fig_sim}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=2.5in]{2(1).png}
-	\caption{Wireless Mapping with Raspberry Pi}
+	\caption{Wireless Mapping with kinect connected to a Raspberry Pi 2}
 	\label{fig_sim}
 \end{figure}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.21)  4 NOV 2017 19:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.21)  4 NOV 2017 21:34
 entering extended mode
 **./bare_jrnl.tex
 (bare_jrnl.tex
@@ -159,9 +159,6 @@ LaTeX Warning: Label `fig_sim' multiply defined.
 
 LaTeX Warning: Label `fig_sim' multiply defined.
 
-
-LaTeX Warning: Label `fig_sim' multiply defined.
-
 )
 \openout1 = `bare_jrnl.aux'.
 
@@ -256,87 +253,83 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-<./images/setupC.png, id=9, 888.31876pt x 481.8pt>
-File: ./images/setupC.png Graphic file (type png)
- <use ./images/setupC.png>
-Package pdftex.def Info: ./images/setupC.png used on input line 91.
-(pdftex.def)             Requested size: 180.67499pt x 97.99036pt.
+<./images/SystemDesign.jpg, id=9, 421.575pt x 260.47313pt>
+File: ./images/SystemDesign.jpg Graphic file (type jpg)
 
-<./images/Wiring_Diagram.png, id=11, 2362.32562pt x 2308.12312pt>
-File: ./images/Wiring_Diagram.png Graphic file (type png)
+<use ./images/SystemDesign.jpg>
+Package pdftex.def Info: ./images/SystemDesign.jpg used on input line 88.
+(pdftex.def)             Requested size: 180.67499pt x 111.63162pt.
 
-<use ./images/Wiring_Diagram.png>
-Package pdftex.def Info: ./images/Wiring_Diagram.png used on input line 98.
-(pdftex.def)             Requested size: 180.67499pt x 176.518pt.
-
-<./images/1(1).png, id=12, 1137.24875pt x 903.375pt>
+<./images/1(1).png, id=10, 1137.24875pt x 903.375pt>
 File: ./images/1(1).png Graphic file (type png)
  <use ./images/1(1).png>
-Package pdftex.def Info: ./images/1(1).png used on input line 113.
+Package pdftex.def Info: ./images/1(1).png used on input line 108.
 (pdftex.def)             Requested size: 180.67499pt x 143.50912pt.
 
-<./images/1(2).png, id=13, 996.72375pt x 919.435pt>
+<./images/1(2).png, id=11, 996.72375pt x 919.435pt>
 File: ./images/1(2).png Graphic file (type png)
  <use ./images/1(2).png>
-Package pdftex.def Info: ./images/1(2).png used on input line 120.
+Package pdftex.def Info: ./images/1(2).png used on input line 115.
 (pdftex.def)             Requested size: 180.67499pt x 166.6556pt.
 
-<./images/2(1).png, id=14, 869.2475pt x 678.535pt>
+<./images/2(1).png, id=12, 869.2475pt x 678.535pt>
 File: ./images/2(1).png Graphic file (type png)
  <use ./images/2(1).png>
-Package pdftex.def Info: ./images/2(1).png used on input line 127.
+Package pdftex.def Info: ./images/2(1).png used on input line 122.
 (pdftex.def)             Requested size: 180.67499pt x 141.0367pt.
 
-<./images/2(2).png, id=15, 973.6375pt x 825.0825pt>
+<./images/2(2).png, id=13, 973.6375pt x 825.0825pt>
 File: ./images/2(2).png Graphic file (type png)
  <use ./images/2(2).png>
-Package pdftex.def Info: ./images/2(2).png used on input line 134.
+Package pdftex.def Info: ./images/2(2).png used on input line 129.
 (pdftex.def)             Requested size: 180.67499pt x 153.10368pt.
 
-[2 <./images/setupC.png> <./images/Wiring_Diagram.png> <./images/1(1).png>]
+[2 <./images/SystemDesign.jpg> <./images/1(1).png> <./images/1(2).png>]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \hbox (badness 3601) in paragraph at lines 185--187
+Underfull \hbox (badness 3601) in paragraph at lines 180--182
 []\OT1/ptm/m/n/8 M. Labb and F. Michaud, \OT1/ptm/m/it/8 ``Mem-ory man-age-ment
  for real-time
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--195
+Underfull \hbox (badness 10000) in paragraph at lines 187--190
 []\OT1/ptm/m/n/8 Po Jen Lai, ``What is ROS?". [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 192--195
 []\OT1/ptm/m/n/8 Zeeshan Khan S, ``What is ROS?". [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
 []\OT1/ptm/m/n/8 ROS.org, ``Nodes". ROS wiki [On-line]. Avail-able:
  []
 
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 
-Underfull \hbox (badness 6094) in paragraph at lines 205--208
+Underfull \hbox (badness 6094) in paragraph at lines 200--203
 []\OT1/ptm/m/n/8 Mathieu Labb, ``Overview on RTAB-Map". [On-line]. Avail-able:
  []
 
-[3 <./images/1(2).png> <./images/2(1).png> <./images/2(2).png>] (bare_jrnl.aux)
+[3
+
+ <./images/2(1).png> <./images/2(2).png>] (bare_jrnl.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2340 strings out of 493333
- 38440 string characters out of 3139191
+ 2337 strings out of 493333
+ 38347 string characters out of 3139191
  104425 words of memory out of 3000000
- 5865 multiletter control sequences out of 15000+200000
+ 5862 multiletter control sequences out of 15000+200000
  38444 words of font info for 68 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
  39i,7n,25p,824b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -344,9 +337,9 @@ Here is how much of TeX's memory you used:
 KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><E:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/urw/times/utmbi8a.pfb><E:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><E:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (3 pages, 4734380 bytes).
+Output written on bare_jrnl.pdf (3 pages, 1917950 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
+ 34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
