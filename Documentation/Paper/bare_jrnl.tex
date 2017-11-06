@@ -6,15 +6,16 @@
 
 \begin{document}
 \title{3D Indoor Mapping Using ROS and Microsoft Kinect Sensor}
-\author{Chirag~Shah,
+\author{Chirag~Shah~and
         ~Srijal~Poojari
-    	and~Kumar~Khandagle}% <-this % stops a space
-\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
-{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+        \\Project~Guide:~Kumar~Khandagle}% <-this % stops a space
+    	%and~Kumar~Khandagle}% <-this % stops a space
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
 
 \maketitle
 \begin{abstract}
-The objective of this project is to create a 3D map of a given environment using a depth camera (Microsoft Kinect) and send this information over a Wi-Fi network to a laptop. This will enable mounting of the camera on a robot/quadcopter and create 3D  map of an indoor environment.
+The objective of this project is to create a 3D map of a given environment using a depth camera (Microsoft Kinect) and send this information over a Wi-Fi network to a laptop. This will enable mounting of the camera on a quadcopter and create 3D  map of an indoor environment.
 
 We used the ROS framework running on a laptop and a Raspberry Pi, a Microsoft Kinect, RTAB-Map package for ROS for constructing the 3D map and freenect package for interfacing Kinect with ROS.
 \end{abstract}
@@ -28,18 +29,17 @@ ROS, Robot Operating System, 3D-Mapping, Microsoft Kinect Sensor, Wireless Mappi
 \IEEEPARstart{A}{utonomous} robots operating in real life settings must be able to navigate in large, unstructured, dynamic and unknown spaces. To do so, they must build a map of their operating environment in order to localize itself in it [1]. We intend to mount the kinect sensor on a quadcopter and create a 3D map of an indoor environment.
 
 We connected the Microsoft Kinect sensor to the RPi and interfaced it using the freenect package; Using the RGB-D image from the kinect sensor, RPi genrates a 3D map using RTAB-Map. RPi then transmits the 3D map to the laptop over a Wi-Fi network. RViz is used to visualize the 3D map on the laptop.
-\\
 
-\hfill mds
- 
-\hfill October 30, 2017
+The paper is organized as follows. Section II describes the major components of our project. Section III describes the design of our wireless mapping setup. Section IV shows the resulting the map that is generated. Section V concludes the paper.
+%\hfill mds
+%\hfill October 30, 2017
 
 %\section{Related Work}
 
 \section{Major Components of Our System}
 
 \subsection{Robot Operating System}
-The Robot Operating System (ROS) is a framework for writing robot software. It is a set of utilities and libraries for implementing different kinds of functionality on robots. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms [2, p. 3]. It is not a programming language [3]. 
+The Robot Operating System (ROS) is a framework for writing robot software. It is a collection of tools, libraries and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms [2, p. 3]. It is not a programming language [3]. 
 
 A ROS system is comprised of a number of independent nodes, each of which communicates with the other nodes using a publish/subscribe messaging model. For example, a particular sensor’s driver might be implemented as a node, which publishes sensor data in a stream of messages. These messages could be consumed by any number of other nodes.
 Note that nodes in ROS do not have to be on the same system or even systems of the same architecture. This makes ROS really flexible and adaptable to the needs of the user. The ROS framework is open source.
@@ -90,7 +90,7 @@ We are using Raspberry Pi 2 Model B along with a WiFi adapter. Higher versions o
 	\label{fig_sim}
 \end{figure}
 
-The OS installed on RPi is Ubuntu Mate, V14.2. ROS Kinetic version 2.3 is installed on the RPi. The Kinect provides the RPi with a RGB-D image. Freenect\_launch package is used for interfacing Kinect with ROS on the RPi. RTAB-Map package is used on the RPi for constructing a 3D map from the image provided by the Kinect. Openni\_launch can also be used for interfacing the kinect.
+The OS installed on RPi is Ubuntu Mate, V14.2. ROS Kinetic version 2.3 is installed on the RPi. The Kinect provides the RPi with a RGB-D image. Freenect\_launch package is used for interfacing Kinect with ROS on the RPi (Openni\_launch can also be used for interfacing the kinect). RTAB-Map package is used on the RPi for constructing a 3D map from the image provided by the Kinect.
 
 The roscore runs on the Raspberry Pi. This roscore is common to the laptop which is on the same network. Thus all the map/sensor data is available to the laptop over the WiFi network.
 Rviz is used for visualizing the map on the laptop. Similarly rtabmapviz can be used for visualizing the map.
@@ -100,8 +100,6 @@ Rviz is used for visualizing the map on the laptop. Similarly rtabmapviz can be 
 A frame rate of 20-25 fps is obtained when the Kinect is connected to the laptop, RTAB-Map does the mapping and RTAB-Mapviz/RViz visualizes the map. 
 
 3-4 fps is obtained when the kinect is connected to the Raspberry Pi and mapping is done by it and the map is visualized on the laptop. The data stream from the Kinect has to be divided by two to allow the RPi to process it fast enough. RPi requires 80-100kbps bandwidth for transmitting the map over the network to the laptop.
-
-
 
 \begin{figure}[ht]
 \centering
@@ -117,6 +115,8 @@ A frame rate of 20-25 fps is obtained when the Kinect is connected to the laptop
 	\label{fig_sim}
 \end{figure}
 
+\newpage
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=2.5in]{2(1).png}
@@ -127,7 +127,7 @@ A frame rate of 20-25 fps is obtained when the Kinect is connected to the laptop
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=2.5in]{2(2).png}
-	\caption{Wireless Mapping with Raspberry Pi}
+	\caption{Wireless Mapping with kinect connected to a Raspberry Pi 2}
 	\label{fig_sim}
 \end{figure}
 
@@ -177,27 +177,27 @@ We would also like to thank our college Sardar Patel Institute of Technology for
 \begin{thebibliography}{1}
 
 \bibitem{RTAB-Map Paper 1}
-M.~Labbé and F.~Michaud, \emph{``Memory management for real-time appearance-based loop closure detection,"},
-Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems, 2011, pp. 1271–1276.
+M.~Labbé and F.~Michaud, ``Memory management for real-time appearance-based loop closure detection,"
+in \emph{Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems}, 2011, pp. 1271–1276.
 
 \bibitem{Programming Robots with ROS}
-Morgan Quigley, Brian Gerkey, William D. Smart, ``Programming Robots with ROS". 2016, p. 3.
+Morgan Quigley, Brian Gerkey, William D. Smart, \emph{Programming Robots with ROS}. 2016, p. 3.
 
 \bibitem{What is ROS- Quora}
-Po Jen Lai, ``What is ROS?". [Online]. Available: 
+Po Jen Lai, ``What is ROS? [Online]. Available: 
 https://www.quora.com/What-is-ROS
 [Accessed: 31- Oct- 2017].
 
 \bibitem{What is ROS- Quora}
-Zeeshan Khan S, ``What is ROS?". [Online]. Available: 
+Zeeshan Khan S, ``What is ROS?" [Online]. Available: 
 https://www.quora.com/What-is-ROS
 [Accessed: 31- Oct- 2017].
 
 \bibitem{ROS Nodes}
-ROS.org, ``Nodes". ROS wiki [Online]. Available: http://wiki.ros.org/Nodes
+ROS.org, ``Nodes." ROS wiki [Online]. Available: http://wiki.ros.org/Nodes
 
 \bibitem{RTB-Map}
-Mathieu Labbé, ``Overview on RTAB-Map". [Online]. Available: 
+Mathieu Labbé, ``Overview on RTAB-Map." [Online]. Available: 
 http://introlab.github.io/rtabmap/
 [Accessed: 31- Oct- 2017].
 
